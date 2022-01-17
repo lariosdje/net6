@@ -6,17 +6,15 @@ using Net6.Api.Repository.IRepository;
 
 namespace Net6.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ActivityController : ControllerBase
     {     
-        private readonly ILogger<ActivityController> _logger;
         private readonly IActivity _activity;
 
-        public ActivityController(ILogger<ActivityController> logger, IActivity activity)
+        public ActivityController(IActivity activity)
         {
-            _logger = logger;
             _activity = activity;
         }
 
